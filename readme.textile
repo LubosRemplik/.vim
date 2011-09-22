@@ -1,1 +1,5 @@
 h1. My vim configuration
+h2. Plugins
+# NERDTree
+# Fugitive
+# CtrlP
