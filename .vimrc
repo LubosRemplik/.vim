@@ -11,8 +11,9 @@ set showcmd
 set showmatch
 set hlsearch
 set smartindent
-set textwidth=80
 set tabstop=4
+set mouse=a
+set number
 
 set background=dark
 
