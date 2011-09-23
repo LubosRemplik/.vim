@@ -5,3 +5,4 @@ h2. Plugins
 # NERDTree
 # Fugitive
 # CtrlP
+# Ack
