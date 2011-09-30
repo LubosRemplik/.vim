@@ -18,3 +18,5 @@ set number
 set background=dark
 
 syntax on
+filetype on
+au BufNewFile,BufRead *.ctp set filetype=php
