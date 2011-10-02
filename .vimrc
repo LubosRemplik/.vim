@@ -18,5 +18,6 @@ set number
 set background=dark
 
 syntax on
-filetype on
+filetype plugin on
 au BufNewFile,BufRead *.ctp set filetype=php
+au FileType php set omnifunc=phpcomplete#CompletePHP
