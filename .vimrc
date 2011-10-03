@@ -14,6 +14,7 @@ set smartindent
 set tabstop=4
 set mouse=a
 set number
+set tags=tags
 
 set background=dark
 
