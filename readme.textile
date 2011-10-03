@@ -7,3 +7,4 @@ h2. Plugins
 # CtrlP
 # Ack
 # NERDCommenter
+# snipMate

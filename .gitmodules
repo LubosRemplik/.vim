@@ -13,3 +13,6 @@
 [submodule "bundle/nerdcommenter"]
 	path = bundle/nerdcommenter
 	url = git://github.com/vim-scripts/The-NERD-Commenter.git
+[submodule "bundle/snipmate"]
+	path = bundle/snipmate
+	url = git://github.com/msanders/snipmate.vim.git
