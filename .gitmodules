@@ -25,3 +25,6 @@
 [submodule "bundle/showmarks"]
 	path = bundle/showmarks
 	url = https://github.com/vim-scripts/ShowMarks.git
+[submodule "bundle/searchcomplete"]
+	path = bundle/searchcomplete
+	url = https://github.com/vim-scripts/SearchComplete

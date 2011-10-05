@@ -11,3 +11,4 @@ h2. Plugins
 # taglist
 # SuperTab
 # ShowMarks
+# SearchComplete
