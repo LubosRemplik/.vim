@@ -18,6 +18,7 @@ set smartindent
 set mouse=a
 set number
 set tags=tags
+set encoding=utf-8
 
 set background=dark
 
