@@ -38,3 +38,6 @@ map <F3> :TlistToggle<CR>
 
 " Clear search highlighting
 map <Leader><Space> :nohl<CR>
+
+" SuperTab configuraion
+let g:SuperTabDefaultCompletionType = "<C-X><C-O>"

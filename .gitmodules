@@ -19,3 +19,6 @@
 [submodule "bundle/taglist"]
 	path = bundle/taglist
 	url = git://github.com/vim-scripts/taglist.vim.git
+[submodule "bundle/supertab"]
+	path = bundle/supertab
+	url = git://github.com/ervandew/supertab.git
