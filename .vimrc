@@ -34,6 +34,7 @@ map <F2> :NERDTreeToggle<CR>
 
 " Taglist copen=1
 let Tlist_Use_Right_Window=1
+let Tlist_GainFocus_On_ToggleOpen = 1
 map <F3> :TlistToggle<CR>
 
 " Clear search highlighting
