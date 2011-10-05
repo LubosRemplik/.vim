@@ -12,3 +12,4 @@ h2. Plugins
 # SuperTab
 # ShowMarks
 # SearchComplete
+# Surround
