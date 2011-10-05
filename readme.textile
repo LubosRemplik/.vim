@@ -8,3 +8,4 @@ h2. Plugins
 # Ack
 # NERDCommenter
 # snipMate
+# taglist
