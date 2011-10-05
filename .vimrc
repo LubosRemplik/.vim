@@ -25,3 +25,16 @@ syntax on
 filetype plugin on
 au BufNewFile,BufRead *.ctp set filetype=php
 au FileType php set omnifunc=phpcomplete#CompletePHP
+
+" Nerdtree configuration
+" autocmd VimEnter * NERDTree
+" autocmd BufEnter * NERDTreeMirror
+" autocmd VimEnter * wincmd w
+map <F2> :NERDTreeToggle<CR>
+
+" Taglist copen=1
+let Tlist_Use_Right_Window=1
+map <F3> :TlistToggle<CR>
+
+" Clear search highlighting
+map <Leader><Space> :nohl<CR>
