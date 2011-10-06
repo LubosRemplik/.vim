@@ -1,15 +1,15 @@
 [submodule "bundle/fugitive"]
 	path = bundle/fugitive
-	url = http://github.com/tpope/vim-fugitive.git
+	url = git://github.com/tpope/vim-fugitive.git
 [submodule "bundle/nerdtree"]
 	path = bundle/nerdtree
-	url = https://github.com/vim-scripts/The-NERD-tree.git
+	url = git://github.com/vim-scripts/The-NERD-tree.git
 [submodule "bundle/ctrlp"]
 	path = bundle/ctrlp
-	url = https://github.com/kien/ctrlp.vim.git
+	url = git://github.com/kien/ctrlp.vim.git
 [submodule "bundle/ack"]
 	path = bundle/ack
-	url = https://github.com/mileszs/ack.vim.git
+	url = git://github.com/mileszs/ack.vim.git
 [submodule "bundle/nerdcommenter"]
 	path = bundle/nerdcommenter
 	url = git://github.com/vim-scripts/The-NERD-Commenter.git
@@ -24,10 +24,10 @@
 	url = git://github.com/ervandew/supertab.git
 [submodule "bundle/showmarks"]
 	path = bundle/showmarks
-	url = https://github.com/vim-scripts/ShowMarks.git
+	url = git://github.com/vim-scripts/ShowMarks.git
 [submodule "bundle/searchcomplete"]
 	path = bundle/searchcomplete
-	url = https://github.com/vim-scripts/SearchComplete
+	url = git://github.com/vim-scripts/SearchComplete
 [submodule "bundle/surround"]
 	path = bundle/surround
 	url = git://github.com/tpope/vim-surround.git
