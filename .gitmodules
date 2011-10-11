@@ -28,3 +28,18 @@
 [submodule "bundle/surround"]
 	path = bundle/surround
 	url = git://github.com/tpope/vim-surround.git
+[submodule "bundle/vcscommand"]
+	path = bundle/vcscommand
+	url = git://github.com/vim-scripts/vcscommand.vim.git
+[submodule "bundle/php"]
+	path = bundle/php
+	url = git://github.com/vim-scripts/php.vim--Garvin.git
+[submodule "bundle/checksyntax"]
+	path = bundle/checksyntax
+	url = git://github.com/tomtom/checksyntax_vim.git
+[submodule "bundle/phpfolding"]
+	path = bundle/phpfolding
+	url = https://github.com/vim-scripts/phpfolding.vim.git
+[submodule "bundle/phpdoc"]
+	path = bundle/phpdoc
+	url = git://github.com/vim-scripts/PDV--phpDocumentor-for-Vim.git

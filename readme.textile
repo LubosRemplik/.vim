@@ -11,3 +11,8 @@ h2. Plugins
 # taglist
 # SearchComplete
 # Surround
+# PHP Syntax
+# checksyntax
+# phpDocumentor
+# phpfolding
+# vcscommand
