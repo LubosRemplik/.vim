@@ -39,7 +39,7 @@
 	url = git://github.com/tomtom/checksyntax_vim.git
 [submodule "bundle/phpfolding"]
 	path = bundle/phpfolding
-	url = https://github.com/vim-scripts/phpfolding.vim.git
+	url = git://github.com/vim-scripts/phpfolding.vim.git
 [submodule "bundle/phpdoc"]
 	path = bundle/phpdoc
 	url = git://github.com/vim-scripts/PDV--phpDocumentor-for-Vim.git
