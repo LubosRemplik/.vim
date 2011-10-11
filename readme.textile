@@ -9,6 +9,5 @@ h2. Plugins
 # NERDCommenter
 # snipMate
 # taglist
-# ShowMarks
 # SearchComplete
 # Surround
