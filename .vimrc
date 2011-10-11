@@ -43,3 +43,5 @@ map <Leader><Space> :nohl<CR>
 
 " SuperTab configuraion
 let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
+
+imap jj <Esc>
