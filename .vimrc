@@ -45,3 +45,7 @@ map <Leader><Space> :nohl<CR>
 let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
 
 imap jj <Esc>
+
+" CtrlP configuration
+let g:ctrlp_working_path_mode = 2
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
