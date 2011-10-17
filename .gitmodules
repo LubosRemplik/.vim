@@ -28,9 +28,6 @@
 [submodule "bundle/surround"]
 	path = bundle/surround
 	url = git://github.com/tpope/vim-surround.git
-[submodule "bundle/vcscommand"]
-	path = bundle/vcscommand
-	url = git://github.com/vim-scripts/vcscommand.vim.git
 [submodule "bundle/php"]
 	path = bundle/php
 	url = git://github.com/vim-scripts/php.vim--Garvin.git
