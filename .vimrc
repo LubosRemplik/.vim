@@ -48,4 +48,6 @@ imap jj <Esc>
 
 " CtrlP configuration
 let g:ctrlp_working_path_mode = 2
-set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
+let g:ctrlp_root_markers = ['tags']
+let g:ctrlp_match_window_reversed = 0
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,tags
