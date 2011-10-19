@@ -19,6 +19,7 @@ set mouse=a
 set number
 set tags=tags
 set encoding=utf-8
+set noswapfile
 
 set background=dark
 
@@ -50,4 +51,4 @@ imap jj <Esc>
 let g:ctrlp_working_path_mode = 2
 let g:ctrlp_root_markers = ['tags']
 let g:ctrlp_match_window_reversed = 0
-set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,tags
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
