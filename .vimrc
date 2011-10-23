@@ -20,6 +20,9 @@ set number
 set tags=tags
 set encoding=utf-8
 set noswapfile
+set relativenumber
+set undofile
+set undodir=/tmp
 
 set background=dark
 
