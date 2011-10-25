@@ -40,3 +40,6 @@
 [submodule "bundle/phpdoc"]
 	path = bundle/phpdoc
 	url = git://github.com/vim-scripts/PDV--phpDocumentor-for-Vim.git
+[submodule "bundle/netrw"]
+	path = bundle/netrw
+	url = git://github.com/vim-scripts/netrw.vim.git
