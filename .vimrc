@@ -61,3 +61,11 @@ set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
 " Clear search highlighting
 map <Leader>r :set relativenumber<CR>
 map <Leader>n :set number<CR>
+
+" Tabs
+map th :tabfirst<CR>
+map tj :tabnext<CR>
+map tk :tabprev<CR>
+map tl :tablast<CR>
+map tn :tabnew<CR>
+map tc :tabclose<CR>
