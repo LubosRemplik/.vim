@@ -14,7 +14,6 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'w0ng/vim-hybrid'
 Plugin 'vim-airline/vim-airline'
 Plugin 'einars/js-beautify'
-Plugin 'groenewege/vim-less'
 Plugin 'joonty/vim-phpqa.git'
 Plugin 'joonty/vim-phpunitqf.git'
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -23,6 +22,8 @@ Plugin 'maksimr/vim-jsbeautify'
 Plugin 'rking/ag.vim.git'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'shawncplus/phpcomplete.vim'
+Plugin 'Shougo/neocomplete.vim'
 Plugin 'tpope/vim-fugitive.git'
 Plugin 'tpope/vim-surround.git'
 Plugin 'elzr/vim-json.git'
@@ -96,7 +97,7 @@ set clipboard=unnamed
 " No swap file, undofile
 set noswapfile
 set undofile
-set undodir=~/.vimundo
+set undodir=~/.vim/undo
 
 " Tab completion for filenames and other command line features.
 set wildmenu
@@ -115,6 +116,18 @@ colorscheme hybrid
 " }}}
 
 " {{{ Plugins config
+
+" NeoComplete
+let g:acp_enableAtStartup = 0
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
+let g:neocomplete#enable_auto_close_preview = 1
+"if !exists('g:neocomplete#force_omni_input_patterns')
+  "let g:neocomplete#force_omni_input_patterns = {}
+"endif
+"let g:neocomplete#force_omni_input_patterns.php = '[^. \t]->\%(\h\w*\)\?\|\h\w*::\%(\h\w*\)\?'
+"let g:neocomplete#force_omni_input_patterns.php = '\h\w*\|[^. \t]->\%(\h\w*\)\?\|\h\w*::\%(\h\w*\)\?'
+set completeopt=longest,menuone
 
 " CtrlP configuration
 let g:ctrlp_working_path_mode = 2
@@ -162,6 +175,16 @@ let mapleader = ','
 " jj as escape in insert mode
 imap jj <Esc>
 
+" OmniComplete
+imap <C-@> <C-Space>
+imap <C-Space> <C-x><C-o>
+imap <C-j> <Down>
+imap <C-k> <Up>
+
+" NeoComplete
+imap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+imap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+
 " Leader mapping
 map <Leader>h :nohl<CR>
 map <Leader>p :set paste!<BAR>:set paste?<CR>
@@ -207,5 +230,29 @@ map gm :Gmove<CR>
 map ge :Gedit<CR>
 map gp :Gpush<CR>
 map gf :Gfetch<CR>
+
+" }}}
+
+" {{{ Autocommands
+"
+" Save on blur
+au FocusLost * :wa
+
+" Save on blur for terminal vim
+au CursorHold,CursorHoldI * silent! wa
+
+" PHP compplete
+" Enable omni completion.
+autocmd FileType css,less,sass,scss setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
+
+" Remember last location in file
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+    \| exe "normal g'\"" | endif
+endif
 
 " }}}
