@@ -15,7 +15,6 @@ Plugin 'w0ng/vim-hybrid'
 Plugin 'vim-airline/vim-airline'
 Plugin 'einars/js-beautify'
 Plugin 'joonty/vim-phpqa.git'
-Plugin 'joonty/vim-phpunitqf.git'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'Lokaltog/vim-easymotion.git'
 Plugin 'maksimr/vim-jsbeautify'
@@ -104,6 +103,10 @@ set wildmenu
 set wildmode=list:longest,list:full
 set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*,*.pyc,node_modules/*
 
+" ctags optimization
+ set autochdir
+ set tags=tags;
+
 " }}}
 
 " {{{ Colors
@@ -189,6 +192,7 @@ imap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 map <Leader>h :nohl<CR>
 map <Leader>p :set paste!<BAR>:set paste?<CR>
 map <Leader>n :call NumberToggle()<CR>
+map <Leader>a <C-]>
 
 " NERDTree
 map <Leader>t :NERDTreeToggle<CR>
@@ -202,9 +206,6 @@ map <Leader>qf :%!phpcbf --standard=psr2<CR>
 
 " PDV settings
 map <Leader>d :call pdv#DocumentCurrentLine()<CR>
-
-" PHP Unit test
-map <Leader>qt :Test<CR>
 
 " Js Beauty
 map <Leader>fj :call JsBeautify()<CR>
