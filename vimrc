@@ -17,6 +17,7 @@ Plugin 'einars/js-beautify'
 Plugin 'joonty/vim-phpqa.git'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'Lokaltog/vim-easymotion.git'
+Plugin 'majutsushi/tagbar'
 Plugin 'maksimr/vim-jsbeautify'
 Plugin 'rking/ag.vim.git'
 Plugin 'scrooloose/nerdtree'
@@ -192,10 +193,13 @@ imap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 map <Leader>h :nohl<CR>
 map <Leader>p :set paste!<BAR>:set paste?<CR>
 map <Leader>n :call NumberToggle()<CR>
-map <Leader>a <C-]>
+map <Leader>a <C-w><C-]><C-w>T
 
 " NERDTree
 map <Leader>t :NERDTreeToggle<CR>
+
+" TagbarToggle
+map <Leader>g :TagbarToggle<CR>
 
 " Easy motion
 map <Leader>s <Plug>(easymotion-s2)
