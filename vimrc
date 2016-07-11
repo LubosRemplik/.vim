@@ -105,7 +105,6 @@ set wildmode=list:longest,list:full
 set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*,*.pyc,node_modules/*
 
 " ctags optimization
- set autochdir
  set tags=tags;
 
 " }}}
