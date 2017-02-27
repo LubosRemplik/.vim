@@ -1,0 +1,5 @@
+https://github.com/Valloric/YouCompleteMe/wiki/Building-Vim-from-source
+
+// add to configure
+--with-luajit \
+--with-lua-prefix=/usr/include/lua5.1
