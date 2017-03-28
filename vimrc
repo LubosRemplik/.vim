@@ -29,6 +29,7 @@ Plugin 'tpope/vim-surround.git'
 Plugin 'elzr/vim-json.git'
 Plugin 'tobyS/vmustache'
 Plugin 'tobyS/pdv'
+Plugin 'w0rp/ale'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -167,7 +168,7 @@ au FileType {yaml,sass,scss,ruby,eruby} setl softtabstop=2 shiftwidth=2 tabstop=
 au FileType php setl textwidth=120 softtabstop=4 shiftwidth=4 tabstop=4 expandtab colorcolumn=120
 
 " Javascript settings
-au FileType javascript setl textwidth=120 softtabstop=2 shiftwidth=2 tabstop=2 expandtab colorcolumn=120
+au FileType javascript setl textwidth=120 softtabstop=4 shiftwidth=4 tabstop=4 expandtab colorcolumn=120
 
 " }}}
 
@@ -234,6 +235,13 @@ map gm :Gmove<CR>
 map ge :Gedit<CR>
 map gp :Gpush<CR>
 map gf :Gfetch<CR>
+
+" Ale
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
+let g:ale_linters = {
+\   'php': ['php -l'],
+\}
 
 " }}}
 
