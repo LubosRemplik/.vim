@@ -62,6 +62,7 @@ syntax on
 set encoding=utf-8
 set termencoding=utf-8
 set fileencodings=utf-8,latin1
+set ff=unix
 
 " Whitespace features
 set tabstop=4
@@ -106,7 +107,10 @@ set wildmode=list:longest,list:full
 set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*,*.pyc,node_modules/*
 
 " ctags optimization
- set tags=tags;
+set tags=tags;
+
+ " fix for slow vim, syntax
+set synmaxcol=200
 
 " }}}
 
