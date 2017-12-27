@@ -110,7 +110,7 @@ set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*,*.pyc,node_modul
 set tags=tags;
 
  " fix for slow vim, syntax
-set synmaxcol=200
+set synmaxcol=500
 
 " }}}
 
