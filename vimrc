@@ -11,7 +11,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " Plugins
-Plugin 'w0ng/vim-hybrid'
+" Plugin 'w0ng/vim-hybrid'
 Plugin 'vim-airline/vim-airline'
 Plugin 'einars/js-beautify'
 Plugin 'joonty/vim-phpqa.git'
@@ -116,10 +116,10 @@ set synmaxcol=500
 
 " {{{ Colors
 
-set background=dark
-set t_Co=256
-let g:hybrid_custom_term_colors = 1
-colorscheme hybrid
+" set background=dark
+" set t_Co=256
+" let g:hybrid_custom_term_colors = 1
+" colorscheme hybrid
 
 " }}}
 
