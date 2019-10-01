@@ -112,18 +112,15 @@ set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*,*.pyc,node_modul
 set tags=tags;
 
  " fix for slow vim, syntax
-set synmaxcol=500
+set synmaxcol=1000
 
 " }}}
 
 " {{{ Colors
 
-" set background=dark
-" set t_Co=256
-" let g:hybrid_custom_term_colors = 1
-" colorscheme hybrid
-
-" }}}
+set background=dark
+let g:solarized_termcolors=256
+colorscheme solarized
 
 " {{{ Plugins config
 
