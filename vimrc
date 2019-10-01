@@ -15,7 +15,6 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'einars/js-beautify'
 Plugin 'joonty/vim-phpqa.git'
-Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'Lokaltog/vim-easymotion.git'
 Plugin 'majutsushi/tagbar'
 Plugin 'maksimr/vim-jsbeautify'
@@ -32,6 +31,7 @@ Plugin 'tobyS/pdv'
 Plugin 'w0rp/ale'
 Plugin 'lumiliet/vim-twig'
 Plugin 'editorconfig/editorconfig-vim'
+Plugin 'junegunn/fzf.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -139,13 +139,6 @@ let g:neocomplete#enable_auto_close_preview = 1
 "let g:neocomplete#force_omni_input_patterns.php = '\h\w*\|[^. \t]->\%(\h\w*\)\?\|\h\w*::\%(\h\w*\)\?'
 set completeopt=longest,menuone
 
-" CtrlP configuration
-let g:ctrlp_working_path_mode = 2
-let g:ctrlp_match_window_reversed = 0
-let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
-let g:ctrlp_max_files = 100000
-let g:ctrlp_max_depth = 40
-
 " PHP QA
 let g:phpqa_messdetector_autorun = 0
 
@@ -156,6 +149,11 @@ let g:phpqa_codesniffer_cmd = '/home/lubos/.composer/vendor/bin/phpcs'
 
 " PDV settings
 let g:pdv_template_dir = "/home/lubos/.vim/pdv-templates"
+
+" FZF
+set rtp+=~/.fzf
+nnoremap <C-f> :Files<Cr>
+nnoremap <C-g> :Rg<Cr>
 
 " }}}
 
