@@ -10,24 +10,33 @@ call plug#begin('~/.vim/plugged')
 " Plug 'w0ng/vim-hybrid'
 Plug 'vim-airline/vim-airline'
 Plug 'einars/js-beautify'
-Plug 'joonty/vim-phpqa.git'
-Plug 'Lokaltog/vim-easymotion.git'
+Plug 'joonty/vim-phpqa'
+Plug 'Lokaltog/vim-easymotion'
 Plug 'majutsushi/tagbar'
 Plug 'maksimr/vim-jsbeautify'
-Plug 'rking/ag.vim.git'
+Plug 'rking/ag.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'shawncplus/phpcomplete.vim'
 Plug 'Shougo/neocomplete.vim'
-Plug 'tpope/vim-fugitive.git'
-Plug 'tpope/vim-surround.git'
-Plug 'elzr/vim-json.git'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'elzr/vim-json'
 Plug 'tobyS/vmustache'
 Plug 'tobyS/pdv'
 Plug 'w0rp/ale'
 Plug 'lumiliet/vim-twig'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/fzf.vim'
+Plug 'ervandew/supertab'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-lists', {'do': 'yarn install --frozen-lockfile'} " mru and stuff
+Plug 'neoclide/coc-highlight', {'do': 'yarn install --frozen-lockfile'} " color highlighting
+Plug 'neoclide/coc-html', {'do': 'yarn install --frozen-lockfile'} " color highlighting
+"Plug 'marlonfan/coc-phpls', {'do': 'yarn install --frozen-lockfile'} " color highlighting
 
 " All of your Plugins must be added before the following line
 call plug#end()
@@ -118,16 +127,16 @@ colorscheme solarized
 " {{{ Plugins config
 
 " NeoComplete
-let g:acp_enableAtStartup = 0
-let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#enable_smart_case = 1
-let g:neocomplete#enable_auto_close_preview = 1
+"let g:acp_enableAtStartup = 0
+"let g:neocomplete#enable_at_startup = 1
+"let g:neocomplete#enable_smart_case = 1
+"let g:neocomplete#enable_auto_close_preview = 1
 "if !exists('g:neocomplete#force_omni_input_patterns')
   "let g:neocomplete#force_omni_input_patterns = {}
 "endif
 "let g:neocomplete#force_omni_input_patterns.php = '[^. \t]->\%(\h\w*\)\?\|\h\w*::\%(\h\w*\)\?'
 "let g:neocomplete#force_omni_input_patterns.php = '\h\w*\|[^. \t]->\%(\h\w*\)\?\|\h\w*::\%(\h\w*\)\?'
-set completeopt=longest,menuone
+"set completeopt=longest,menuone
 
 " PHP QA
 let g:phpqa_messdetector_autorun = 0
@@ -145,6 +154,12 @@ set rtp+=~/.fzf
 nnoremap <C-f> :Files<Cr>
 nnoremap <C-g> :Rg<Cr>
 
+" Gutentags
+"set statusline+=%{gutentags#statusline()}
+
+" Auto Pairs
+let g:AutoPairsShortcutToggle = '<p>'
+
 " }}}
 
 " {{{ Filetypes
@@ -156,13 +171,21 @@ au BufNewFile,BufRead *.ctp set filetype=php
 au FileType make setl noexpandtab
 
 " Make ruby,scss,sass use 2 spaces for indentation.
-au FileType {yaml,sass,scss,ruby,eruby,less,css,javascript} setl softtabstop=2 shiftwidth=2 tabstop=2 expandtab colorcolumn=80
+au FileType {yaml,sass,scss,ruby,eruby,less,css,javascript,json} setl softtabstop=2 shiftwidth=2 tabstop=2 expandtab colorcolumn=80
 
 " php settings
 au FileType php setl textwidth=120 softtabstop=4 shiftwidth=4 tabstop=4 expandtab colorcolumn=120
 
 " Javascript settings
 "au FileType javascript setl textwidth=120 softtabstop=4 shiftwidth=4 tabstop=4 expandtab colorcolumn=120
+
+"sparkup
+augroup sparkup_types
+  " Remove ALL autocommands of the current group.
+  autocmd!
+  " Add sparkup to new filetypes
+  autocmd FileType mustache,php,javascript,jsx runtime! ftplugin/html/sparkup.vim
+augroup END
 
 " }}}
 
@@ -180,8 +203,8 @@ imap <C-j> <Down>
 imap <C-k> <Up>
 
 " NeoComplete
-imap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-imap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+"imap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+"imap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 
 " Leader mapping
 map <Leader>h :nohl<CR>
@@ -253,7 +276,10 @@ autocmd FileType css,less,sass,scss setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
+" autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
+
+" SuperTab & omni completion
+let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
 
 " Remember last location in file
 if has("autocmd")
