@@ -3,41 +3,34 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+" Vim Plug (vim-plug)
+call plug#begin('~/.vim/plugged')
 
 " Plugins
-" Plugin 'w0ng/vim-hybrid'
-Plugin 'vim-airline/vim-airline'
-Plugin 'einars/js-beautify'
-Plugin 'joonty/vim-phpqa.git'
-Plugin 'Lokaltog/vim-easymotion.git'
-Plugin 'majutsushi/tagbar'
-Plugin 'maksimr/vim-jsbeautify'
-Plugin 'rking/ag.vim.git'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'shawncplus/phpcomplete.vim'
-Plugin 'Shougo/neocomplete.vim'
-Plugin 'tpope/vim-fugitive.git'
-Plugin 'tpope/vim-surround.git'
-Plugin 'elzr/vim-json.git'
-Plugin 'tobyS/vmustache'
-Plugin 'tobyS/pdv'
-Plugin 'w0rp/ale'
-Plugin 'lumiliet/vim-twig'
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'junegunn/fzf.vim'
+" Plug 'w0ng/vim-hybrid'
+Plug 'vim-airline/vim-airline'
+Plug 'einars/js-beautify'
+Plug 'joonty/vim-phpqa.git'
+Plug 'Lokaltog/vim-easymotion.git'
+Plug 'majutsushi/tagbar'
+Plug 'maksimr/vim-jsbeautify'
+Plug 'rking/ag.vim.git'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdcommenter'
+Plug 'shawncplus/phpcomplete.vim'
+Plug 'Shougo/neocomplete.vim'
+Plug 'tpope/vim-fugitive.git'
+Plug 'tpope/vim-surround.git'
+Plug 'elzr/vim-json.git'
+Plug 'tobyS/vmustache'
+Plug 'tobyS/pdv'
+Plug 'w0rp/ale'
+Plug 'lumiliet/vim-twig'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'junegunn/fzf.vim'
 
 " All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-
-" }}}
+call plug#end()
 
 " {{{ Functions
 function! NumberToggle()
