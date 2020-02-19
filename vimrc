@@ -36,7 +36,7 @@ Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-lists', {'do': 'yarn install --frozen-lockfile'} " mru and stuff
 Plug 'neoclide/coc-highlight', {'do': 'yarn install --frozen-lockfile'} " color highlighting
 Plug 'neoclide/coc-html', {'do': 'yarn install --frozen-lockfile'} " color highlighting
-"Plug 'marlonfan/coc-phpls', {'do': 'yarn install --frozen-lockfile'} " color highlighting
+Plug 'marlonfan/coc-phpls', {'do': 'yarn install --frozen-lockfile'} " color highlighting
 
 " All of your Plugins must be added before the following line
 call plug#end()
