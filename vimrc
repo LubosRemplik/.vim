@@ -12,7 +12,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'einars/js-beautify'
 Plug 'joonty/vim-phpqa'
 Plug 'Lokaltog/vim-easymotion'
-Plug 'majutsushi/tagbar'
+"Plug 'majutsushi/tagbar'
 Plug 'maksimr/vim-jsbeautify'
 Plug 'rking/ag.vim'
 Plug 'scrooloose/nerdtree'
@@ -29,7 +29,7 @@ Plug 'lumiliet/vim-twig'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/fzf.vim'
 Plug 'ervandew/supertab'
-Plug 'ludovicchabant/vim-gutentags'
+"Plug 'ludovicchabant/vim-gutentags'
 Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
@@ -110,7 +110,7 @@ set wildmode=list:longest,list:full
 set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*,*.pyc,node_modules/*
 
 " ctags optimization
-set tags=tags;
+"set tags=tags;
 
  " fix for slow vim, syntax
 set synmaxcol=1000
