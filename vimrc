@@ -251,6 +251,7 @@ map gm :Gmove<CR>
 map ge :Gedit<CR>
 map gp :Gpush<CR>
 map gf :Gfetch<CR>
+map gc :Gcommit<CR>
 
 " Ale
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
