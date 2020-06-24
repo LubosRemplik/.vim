@@ -8,7 +8,7 @@ help:
 
 init:
 	ln -sf ~/.vim/vimrc ~/.vimrc
-    sudo npm i intelephense -g
+	sudo npm i intelephense -g
 
 install:
 	vim +PlugInstall +PlugClean! +qall
