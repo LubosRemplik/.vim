@@ -232,6 +232,7 @@ map <Leader>a <C-w><C-]><C-w>T
 map <Leader>t :NERDTreeToggle<CR>
 let g:NERDTreeDirArrowExpandable = '+'
 let g:NERDTreeDirArrowCollapsible = '-'
+au BufEnter * if bufname('#') =~ 'NERD_tree' && bufname('%') !~ 'NERD_tree' && winnr('$') > 1 | b# | exe "normal! \<c-w>\<c-w>" | :blast | endif " prevent files to open in nerdtree eg with fzf
 
 " Prettier
 let g:prettier#config#config_precedence = 'file-override'
