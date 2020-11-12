@@ -9,14 +9,15 @@ call plug#begin('~/.vim/plugged')
 " Plugins
 " Plug 'w0ng/vim-hybrid'
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'einars/js-beautify'
 Plug 'joonty/vim-phpqa'
 Plug 'Lokaltog/vim-easymotion'
 "Plug 'majutsushi/tagbar'
 Plug 'maksimr/vim-jsbeautify'
-Plug 'rking/ag.vim'
-Plug 'scrooloose/nerdtree'
-Plug 'scrooloose/nerdcommenter'
+"Plug 'rking/ag.vim'
+Plug 'preservim/nerdtree'
+Plug 'preservim/nerdcommenter'
 Plug 'shawncplus/phpcomplete.vim'
 Plug 'Shougo/neocomplete.vim'
 Plug 'tpope/vim-fugitive'
@@ -25,18 +26,22 @@ Plug 'elzr/vim-json'
 Plug 'tobyS/vmustache'
 Plug 'tobyS/pdv'
 Plug 'w0rp/ale'
-Plug 'lumiliet/vim-twig'
+"Plug 'lumiliet/vim-twig'
+Plug 'ryanoasis/vim-devicons'
+Plug 'lambdalisue/glyph-palette.vim'
+"Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'editorconfig/editorconfig-vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'ervandew/supertab'
-"Plug 'ludovicchabant/vim-gutentags'
-Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plug 'ludovicchabant/vim-gutentags'
+"Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-lists', {'do': 'yarn install --frozen-lockfile'} " mru and stuff
 Plug 'neoclide/coc-highlight', {'do': 'yarn install --frozen-lockfile'} " color highlighting
-Plug 'neoclide/coc-html', {'do': 'yarn install --frozen-lockfile'} " color highlighting
-
+Plug 'neoclide/coc-html', {'do': 'yarn install --frozen-lockfile'} " html
+Plug 'marlonfan/coc-phpls', {'do': 'yarn install --frozen-lockfile'} " php linter
 " All of your Plugins must be added before the following line
 call plug#end()
 
@@ -110,7 +115,7 @@ set wildmode=list:longest,list:full
 set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*,*.pyc,node_modules/*
 
 " ctags optimization
-"set tags=tags;
+set tags=tags;
 
  " fix for slow vim, syntax
 set synmaxcol=1000
@@ -148,13 +153,31 @@ let g:phpqa_codesniffer_cmd = '/home/lubos/.composer/vendor/bin/phpcs'
 " PDV settings
 let g:pdv_template_dir = "/home/lubos/.vim/pdv-templates"
 
+" higlight search
+:set hlsearch
+
+" horizontal split styling
+:set t_Co=1024
+let g:airline_theme='sol'
+let g:airline_extensions = []
+
+" nerdtree color
+:hi Directory guifg=#FF0000 ctermfg=148 "https://vim.fandom.com/wiki/Xterm256_color_names_for_console_Vim
+
+" devicons
+augroup my-glyph-palette
+	autocmd! *
+	autocmd FileType fern call glyph_palette#apply()
+	autocmd FileType nerdtree,startify call glyph_palette#apply()
+augroup END
+
 " FZF
 set rtp+=~/.fzf
 nnoremap <C-f> :Files<Cr>
 nnoremap <C-g> :Rg<Cr>
 
 " Gutentags
-"set statusline+=%{gutentags#statusline()}
+set statusline+=%{gutentags#statusline()}
 
 " Auto Pairs
 let g:AutoPairsShortcutToggle = '<p>'
@@ -195,12 +218,6 @@ let mapleader = ','
 " jj as escape in insert mode
 imap jj <Esc>
 
-" OmniComplete
-imap <C-@> <C-Space>
-imap <C-Space> <C-x><C-o>
-imap <C-j> <Down>
-imap <C-k> <Up>
-
 " NeoComplete
 "imap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 "imap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
@@ -213,6 +230,11 @@ map <Leader>a <C-w><C-]><C-w>T
 
 " NERDTree
 map <Leader>t :NERDTreeToggle<CR>
+let g:NERDTreeDirArrowExpandable = '+'
+let g:NERDTreeDirArrowCollapsible = '-'
+
+" Prettier
+let g:prettier#config#config_precedence = 'file-override'
 
 " TagbarToggle
 map <Leader>g :TagbarToggle<CR>
@@ -276,7 +298,7 @@ autocmd FileType css,less,sass,scss setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-" autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
+autocmd FileType json syntax match Comment +\/\/.\+$+
 
 " SuperTab & omni completion
 let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
