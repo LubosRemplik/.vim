@@ -172,9 +172,13 @@ augroup my-glyph-palette
 augroup END
 
 " FZF
+" export FZF_DEFAULT_OPTS="--history=$HOME/.fzf_history"
 set rtp+=~/.fzf
 nnoremap <C-f> :Files<Cr>
+nnoremap <C-l> :Lines<Cr>
+nnoremap <C-a> :Ag<Cr>
 nnoremap <C-g> :Rg<Cr>
+nnoremap <C-h> :History<Cr>
 
 " Gutentags
 set statusline+=%{gutentags#statusline()}
