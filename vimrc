@@ -258,6 +258,7 @@ map <Leader>d :call pdv#DocumentCurrentLine()<CR>
 map <Leader>fj :call JsBeautify()<CR>
 map <Leader>fc :call CSSBeautify()<CR>
 map <Leader>fh :call HtmlBeautify()<CR>
+map <Leader>jq :%!jq .<CR>
 
 " Tabs
 map th :tabfirst<CR>
