@@ -14,7 +14,7 @@ Plug 'einars/js-beautify'
 Plug 'joonty/vim-phpqa'
 Plug 'Lokaltog/vim-easymotion'
 "Plug 'majutsushi/tagbar'
-Plug 'maksimr/vim-jsbeautify'
+"Plug 'maksimr/vim-jsbeautify'
 "Plug 'rking/ag.vim'
 Plug 'preservim/nerdtree'
 Plug 'preservim/nerdcommenter'
@@ -25,7 +25,7 @@ Plug 'tpope/vim-surround'
 Plug 'elzr/vim-json'
 Plug 'tobyS/vmustache'
 Plug 'tobyS/pdv'
-Plug 'w0rp/ale'
+Plug 'dense-analysis/ale'
 "Plug 'lumiliet/vim-twig'
 Plug 'ryanoasis/vim-devicons'
 Plug 'lambdalisue/glyph-palette.vim'
@@ -254,12 +254,6 @@ map <Leader>qf :%!phpcbf --standard=psr2<CR>
 " PDV settings
 map <Leader>d :call pdv#DocumentCurrentLine()<CR>
 
-" Js Beauty
-map <Leader>fj :call JsBeautify()<CR>
-map <Leader>fc :call CSSBeautify()<CR>
-map <Leader>fh :call HtmlBeautify()<CR>
-map <Leader>jq :%!jq .<CR>
-
 " Tabs
 map th :tabfirst<CR>
 map tj :tabnext<CR>
@@ -282,21 +276,29 @@ map gf :Gfetch<CR>
 map gc :Gcommit<CR>
 
 " Ale
+map <Leader>f :ALEFix<CR>
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 let g:ale_linters = {
 \   'php': ['php -l'],
 \}
-
-" }}}
+let g:ale_fixers = {
+\   'javascript': ['prettier'],
+\   'json': ['prettier'],
+\   'yaml': ['prettier'],
+\   'css': ['prettier'],
+\   'scss': ['prettier'],
+\   'less': ['prettier'],
+\}
+"let g:ale_fix_on_save = 1
 
 " {{{ Autocommands
 "
 " Save on blur
-au FocusLost * :wa
+"au FocusLost * :wa
 
 " Save on blur for terminal vim
-au CursorHold,CursorHoldI * silent! wa
+"au CursorHold,CursorHoldI * silent! wa
 
 " PHP compplete
 " Enable omni completion.
