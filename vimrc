@@ -10,7 +10,7 @@ call plug#begin('~/.vim/plugged')
 " Plug 'w0ng/vim-hybrid'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'einars/js-beautify'
+"Plug 'einars/js-beautify'
 Plug 'joonty/vim-phpqa'
 Plug 'Lokaltog/vim-easymotion'
 "Plug 'majutsushi/tagbar'
@@ -148,10 +148,10 @@ let g:phpqa_messdetector_autorun = 0
 " PHP Code Sniffer binary
 let g:phpqa_codesniffer_autorun = 0
 let g:phpqa_codesniffer_args = "--standard=CakePHP"
-let g:phpqa_codesniffer_cmd = '/home/lubos/.composer/vendor/bin/phpcs'
+let g:phpqa_codesniffer_cmd = $HOME . "~/.composer/vendor/bin/phpcs"
 
 " PDV settings
-let g:pdv_template_dir = "/home/lubos/.vim/pdv-templates"
+let g:pdv_template_dir = $HOME . "/.vim/pdv-templates"
 
 " higlight search
 :set hlsearch
@@ -290,7 +290,7 @@ let g:ale_fixers = {
 \   'scss': ['prettier'],
 \   'less': ['prettier'],
 \}
-"let g:ale_fix_on_save = 1
+let g:ale_fix_on_save = 1
 
 " {{{ Autocommands
 "
