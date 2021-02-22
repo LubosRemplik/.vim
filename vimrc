@@ -42,6 +42,7 @@ Plug 'neoclide/coc-lists', {'do': 'yarn install --frozen-lockfile'} " mru and st
 Plug 'neoclide/coc-highlight', {'do': 'yarn install --frozen-lockfile'} " color highlighting
 Plug 'neoclide/coc-html', {'do': 'yarn install --frozen-lockfile'} " html
 Plug 'marlonfan/coc-phpls', {'do': 'yarn install --frozen-lockfile'} " php linter
+Plug 'christoomey/vim-tmux-navigator'
 " All of your Plugins must be added before the following line
 call plug#end()
 
@@ -178,10 +179,10 @@ endif
 " export FZF_DEFAULT_OPTS="--history=$HOME/.fzf_history"
 set rtp+=~/.fzf
 nnoremap <C-f> :Files<Cr>
-nnoremap <C-l> :Lines<Cr>
+"nnoremap <C-l> :Lines<Cr>
 nnoremap <C-a> :Ag<Cr>
 nnoremap <C-g> :Rg<Cr>
-nnoremap <C-h> :History<Cr>
+"nnoremap <C-h> :History<Cr>
 
 " Gutentags
 set statusline+=%{gutentags#statusline()}
@@ -302,6 +303,32 @@ let g:ale_fix_on_save = 1
 
 " Save on blur for terminal vim
 "au CursorHold,CursorHoldI * silent! wa
+
+" copy to attached terminal using the yank(1) script:
+" https://github.com/sunaku/home/blob/master/bin/yank
+function! Yank(text) abort
+  let escape = system('yank', a:text)
+  if v:shell_error
+    echoerr escape
+  else
+    call writefile([escape], '/dev/tty', 'b')
+  endif
+endfunction
+noremap <silent> <Leader>y y:<C-U>call Yank(@0)<CR>
+
+" automatically run yank(1) whenever yanking in Vim
+" (this snippet was contributed by Larry Sanderson)
+function! CopyYank() abort
+  call Yank(join(v:event.regcontents, "\n"))
+endfunction
+autocmd TextYankPost * call CopyYank()
+
+" automatically rebalance windows on vim resize
+autocmd VimResized * :wincmd =
+
+" zoom a vim pane, <C-w>= to re-balance
+nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
+nnoremap <leader>= :wincmd =<cr>
 
 " PHP compplete
 " Enable omni completion.
