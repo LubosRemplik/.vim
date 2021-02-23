@@ -43,6 +43,7 @@ Plug 'neoclide/coc-highlight', {'do': 'yarn install --frozen-lockfile'} " color 
 Plug 'neoclide/coc-html', {'do': 'yarn install --frozen-lockfile'} " html
 Plug 'marlonfan/coc-phpls', {'do': 'yarn install --frozen-lockfile'} " php linter
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'tmux-plugins/vim-tmux-focus-events'
 " All of your Plugins must be added before the following line
 call plug#end()
 
@@ -189,6 +190,9 @@ set statusline+=%{gutentags#statusline()}
 
 " Auto Pairs
 let g:AutoPairsShortcutToggle = '<p>'
+
+" vim-tmux-focus-events
+set autoread
 
 " }}}
 
