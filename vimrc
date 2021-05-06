@@ -16,6 +16,8 @@ Plug 'Lokaltog/vim-easymotion'
 "Plug 'majutsushi/tagbar'
 "Plug 'maksimr/vim-jsbeautify'
 "Plug 'rking/ag.vim'
+"Font for windows tree terminal I picked Droid sans
+"https://github.com/ryanoasis/nerd-fonts#patched-fonts
 Plug 'preservim/nerdtree'
 Plug 'preservim/nerdcommenter'
 Plug 'shawncplus/phpcomplete.vim'
@@ -44,6 +46,8 @@ Plug 'neoclide/coc-html', {'do': 'yarn install --frozen-lockfile'} " html
 Plug 'marlonfan/coc-phpls', {'do': 'yarn install --frozen-lockfile'} " php linter
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tmux-plugins/vim-tmux-focus-events'
+Plug 'tpope/vim-dadbod'
+Plug 'kristijanhusak/vim-dadbod-ui'
 " All of your Plugins must be added before the following line
 call plug#end()
 
@@ -122,6 +126,9 @@ set tags=tags;
  " fix for slow vim, syntax
 set synmaxcol=1000
 
+" required for parceljs HMR
+set backupcopy=yes
+
 " }}}
 
 " {{{ Colors
@@ -193,6 +200,11 @@ let g:AutoPairsShortcutToggle = '<p>'
 
 " vim-tmux-focus-events
 set autoread
+
+" dbui
+let g:db_ui_win_position = 'left'
+let g:db_ui_show_database_icon = 1
+let g:db_ui_use_nerd_fonts = 1
 
 " }}}
 
@@ -300,6 +312,12 @@ let g:ale_fixers = {
 \}
 let g:ale_fix_on_save = 1
 
+" DBUI
+map <Leader>m :DBUI<CR>
+
+" Zoom window horizontal (e.g. results of DBUI)
+map <Leader>z 50<C-w>_
+
 " {{{ Autocommands
 "
 " Save on blur
@@ -350,5 +368,8 @@ if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
     \| exe "normal g'\"" | endif
 endif
+
+" Do not fold
+au BufWinEnter * normal zR
 
 " }}}
