@@ -129,6 +129,9 @@ set synmaxcol=1000
 " required for parceljs HMR
 set backupcopy=yes
 
+" window preview size
+set previewheight=30
+
 " }}}
 
 " {{{ Colors
@@ -205,6 +208,7 @@ set autoread
 let g:db_ui_win_position = 'left'
 let g:db_ui_show_database_icon = 1
 let g:db_ui_use_nerd_fonts = 1
+let g:db_ui_auto_execute_table_helpers = 1
 
 " }}}
 
@@ -272,7 +276,7 @@ map <Leader><Leader>s <Plug>(easymotion-sn)
 map <Leader>qf :%!phpcbf --standard=psr2<CR>
 
 " PDV settings
-map <Leader>d :call pdv#DocumentCurrentLine()<CR>
+map <Leader>c :call pdv#DocumentCurrentLine()<CR>
 
 " Tabs
 map th :tabfirst<CR>
@@ -313,7 +317,7 @@ let g:ale_fixers = {
 let g:ale_fix_on_save = 1
 
 " DBUI
-map <Leader>m :DBUI<CR>
+map <Leader>d :DBUI<CR>
 
 " Zoom window horizontal (e.g. results of DBUI)
 map <Leader>z 50<C-w>_
