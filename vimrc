@@ -205,7 +205,9 @@ let g:AutoPairsShortcutToggle = '<p>'
 set autoread
 
 " tmux fix for cursor
-let &t_SI="\<Esc>[2 q"
+let &t_SI="\<Esc>[1 q"
+let &t_SR="\<Esc>[1 q"
+let &t_EI="\<Esc>[3 q"
 
 " dbui
 let g:db_ui_win_position = 'left'
