@@ -8,7 +8,7 @@ help:
 
 init:
 	ln -sf ~/.vim/vimrc ~/.vimrc
-	curl -fsSL https://deb.nodesource.com/setup_15.x | sudo -E bash -
+	curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
 	sudo apt-get install -y nodejs silversearcher-ag exuberant-ctags
 	sudo npm install --global intelephense
 	sudo npm install --global yarn
