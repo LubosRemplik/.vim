@@ -204,6 +204,9 @@ let g:AutoPairsShortcutToggle = '<p>'
 " vim-tmux-focus-events
 set autoread
 
+" tmux fix for cursor
+let &t_SI="\<Esc>[2 q"
+
 " dbui
 let g:db_ui_win_position = 'left'
 let g:db_ui_show_database_icon = 1
