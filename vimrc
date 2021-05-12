@@ -214,6 +214,22 @@ let g:db_ui_win_position = 'left'
 let g:db_ui_show_database_icon = 1
 let g:db_ui_use_nerd_fonts = 1
 let g:db_ui_auto_execute_table_helpers = 1
+" to include headrs in export query, find answer here https://stackoverflow.com/questions/5941809/include-headers-when-using-select-into-outfile
+" easier to use union than fetching fields from information schema
+let g:db_ui_export_query = "
+	\SET @outfile = DATE_FORMAT(NOW(),\"'/var/lib/mysql-export/{table}_%Y%m%d%H%i%s.csv'\");\n
+	\SET @s = CONCAT(\"SELECT * FROM `{table}` INTO OUTFILE \", @outfile, \" FIELDS TERMINATED BY ',' ENCLOSED BY '\\\"' LINES TERMINATED BY '\\n'\");\n
+    \/* Replace sample fields with real for export with headers */\n
+    \/* https://stackoverflow.com/questions/5941809/include-headers-when-using-select-into-outfile */\n
+	\/* SET @s = CONCAT(\"SELECT 'id', 'first_name', 'last_name' UNION SELECT id, first_name, last_name FROM `{table}` INTO OUTFILE \", @outfile, \" FIELDS TERMINATED BY ',' ENCLOSED BY '\\\"' LINES TERMINATED BY '\\n'\"); */\n
+	\PREPARE stmt FROM @s;\n
+	\EXECUTE stmt;\n
+	\SELECT @outfile;\n"
+let g:db_ui_table_helpers = {
+\       'mysql': {
+\               'Export': g:db_ui_export_query
+\       }
+\ }
 
 " }}}
 
