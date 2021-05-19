@@ -334,6 +334,8 @@ let g:ale_fixers = {
 \   'css': ['prettier'],
 \   'scss': ['prettier'],
 \   'less': ['prettier'],
+\   'html': ['prettier'],
+\   'php': ['prettier'],
 \}
 let g:ale_fix_on_save = 1
 
