@@ -308,17 +308,17 @@ map tn :tabnew<CR>
 map tc :tabclose<CR>
 
 " Git fugitive
-map gs :Gstatus<CR>
-map gd :Gdiff<CR>
+map gs :Git<CR>
+map gd :Git diff<CR>
 map gw :Gwrite<CR>
 map gr :Gread<CR>
-map gl :Glog<CR>
-map gb :Gblame<CR>
+map gl :Git log<CR>
+map gb :Git blame<CR>
 map gm :Gmove<CR>
 map ge :Gedit<CR>
 map gp :Gpush<CR>
 map gf :Gfetch<CR>
-map gc :Gcommit<CR>
+map gc :Git commit<CR>
 
 " Ale
 map <Leader>f :ALEFix<CR>
