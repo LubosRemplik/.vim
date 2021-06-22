@@ -62,6 +62,13 @@ function! NumberToggle()
         set relativenumber
     endif
 endfunc
+function! AleFixOnSaveToggle()
+	if (g:ale_fix_on_save == 1)
+		let g:ale_fix_on_save = 0
+	else
+		let g:ale_fix_on_save = 1
+	endif
+endfunc
 " }}}
 
 " {{{ Window and editor setup
@@ -275,7 +282,7 @@ imap jj <Esc>
 map <Leader>h :nohl<CR>
 map <Leader>p :set paste!<BAR>:set paste?<CR>
 map <Leader>n :call NumberToggle()<CR>
-map <Leader>a <C-w><C-]><C-w>T
+map <Leader>a :call AleFixOnSaveToggle()<CR>
 
 " NERDTree
 map <Leader>t :NERDTreeToggle<CR>
