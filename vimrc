@@ -38,7 +38,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'ervandew/supertab'
 Plug 'ludovicchabant/vim-gutentags'
 "Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
-Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-lists', {'do': 'yarn install --frozen-lockfile'} " mru and stuff
 Plug 'neoclide/coc-highlight', {'do': 'yarn install --frozen-lockfile'} " color highlighting
