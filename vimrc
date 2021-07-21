@@ -139,6 +139,10 @@ set backupcopy=yes
 " window preview size
 set previewheight=30
 
+" mouse tty
+set mouse=a
+set ttymouse=xterm2
+
 " }}}
 
 " {{{ Colors
