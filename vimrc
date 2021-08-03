@@ -12,7 +12,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 "Plug 'einars/js-beautify'
 Plug 'joonty/vim-phpqa'
-Plug 'Lokaltog/vim-easymotion'
 "Plug 'majutsushi/tagbar'
 "Plug 'maksimr/vim-jsbeautify'
 "Plug 'rking/ag.vim'
@@ -46,8 +45,6 @@ Plug 'neoclide/coc-html', {'do': 'yarn install --frozen-lockfile'} " html
 Plug 'marlonfan/coc-phpls', {'do': 'yarn install --frozen-lockfile'} " php linter
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tmux-plugins/vim-tmux-focus-events'
-Plug 'tpope/vim-dadbod'
-Plug 'kristijanhusak/vim-dadbod-ui'
 " All of your Plugins must be added before the following line
 call plug#end()
 
@@ -297,18 +294,11 @@ au BufEnter * if bufname('#') =~ 'NERD_tree' && bufname('%') !~ 'NERD_tree' && w
 " Prettier
 let g:prettier#config#config_precedence = 'file-override'
 
-" TagbarToggle
-map <Leader>g :TagbarToggle<CR>
-
-" Easy motion
-map <Leader>s <Plug>(easymotion-s2)
-map <Leader><Leader>s <Plug>(easymotion-sn)
-
 " PHP QA
 map <Leader>qf :%!phpcbf --standard=psr2<CR>
 
 " PDV settings
-map <Leader>c :call pdv#DocumentCurrentLine()<CR>
+map <Leader>d :call pdv#DocumentCurrentLine()<CR>
 
 " Tabs
 map th :tabfirst<CR>
@@ -349,9 +339,6 @@ let g:ale_fixers = {
 \   'php': ['prettier'],
 \}
 let g:ale_fix_on_save = 1
-
-" DBUI
-map <Leader>d :DBUI<CR>
 
 " Zoom window horizontal (e.g. results of DBUI)
 map <Leader>z 50<C-w>_
