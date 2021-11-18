@@ -35,7 +35,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'ervandew/supertab'
-Plug 'ludovicchabant/vim-gutentags'
+"Plug 'ludovicchabant/vim-gutentags'
 "Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
@@ -125,7 +125,7 @@ set wildmode=list:longest,list:full
 set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*,*.pyc,node_modules/*
 
 " ctags optimization
-set tags=tags;
+"set tags=tags;
 
  " fix for slow vim, syntax
 set synmaxcol=1000
@@ -204,7 +204,7 @@ nnoremap <C-g> :Rg<Cr>
 "nnoremap <C-h> :History<Cr>
 
 " Gutentags
-set statusline+=%{gutentags#statusline()}
+"set statusline+=%{gutentags#statusline()}
 
 " Auto Pairs
 let g:AutoPairsShortcutToggle = '<p>'
